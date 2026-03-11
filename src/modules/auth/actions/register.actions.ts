@@ -11,6 +11,7 @@ interface ReisterSuccess {
   token: string
 }
 
+
 export const reisterAction =
   async (fullName: string, email: string, password: string): Promise<ReisterError | ReisterSuccess> => {
     try {
