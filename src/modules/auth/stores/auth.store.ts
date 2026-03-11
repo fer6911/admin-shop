@@ -100,11 +100,13 @@ const checkAuthStatus = async():Promise<boolean> => {
     isChecking: computed(() => authStatus.value === AuthStatus.Checking),
     isAuthenticated: computed(() => authStatus.value === AuthStatus.Authenticated),
 
-    //TODO getter para saber si es un administrador o no
+    
+    isAdmin: computed(()=> user.value?.roles.includes('admin') ?? false),
     username: computed(() => user.value?.fullName),
 
     // actions
     login,
+    logout,
     register,
     checkAuthStatus
   }
